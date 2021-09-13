@@ -125,12 +125,11 @@ function App() {
 }
 
 function toggleInput() {
-  const inputHour = $('.input-hour');
-  const inputMin = $('.input-min');
-  const inputSec = $('.input-sec');
-  inputHour.disabled = !inputHour.disabled;
-  inputMin.disabled = !inputMin.disabled;
-  inputSec.disabled = !inputSec.disabled;
+  const inputs = document.querySelectorAll('.input-box input');
+  inputs.forEach((input) => {
+    input.disabled = !input.disabled;
+    input.classList.toggle('disabled');
+  });
 }
 
 function toggleBtnText() {
@@ -160,15 +159,10 @@ function calculateTime(total) {
 }
 
 function setTimerText(total) {
-  const timer = calculateTime(total);
-
-  const timerHour = $('.timer-hour');
-  const timerMin = $('.timer-min');
-  const timerSec = $('.timer-sec');
-
-  timerHour.innerText = String(timer.hour).padStart(2, 0);
-  timerMin.innerText = String(timer.min).padStart(2, 0);
-  timerSec.innerText = String(timer.sec).padStart(2, 0);
+  const { hour, min, sec } = calculateTime(total);
+  $('.timer-hour').innerText = String(hour).padStart(2, 0);
+  $('.timer-min').innerText = String(min).padStart(2, 0);
+  $('.timer-sec').innerText = String(sec).padStart(2, 0);
 }
 
 function setTimerBar(total, left) {
@@ -190,9 +184,8 @@ function resetTimeBar() {
 }
 
 function resetInput() {
-  $('.input-hour').value = '';
-  $('.input-min').value = '';
-  $('.input-sec').value = '';
+  const inputs = document.querySelectorAll('.input-box input');
+  inputs.forEach((input) => (input.value = ''));
 }
 
 document.addEventListener('DOMContentLoaded', function () {

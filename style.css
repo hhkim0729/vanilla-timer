@@ -108,3 +108,7 @@ input::-webkit-inner-spin-button {
   font-size: 9rem;
   color: lightsalmon;
 }
+
+.disabled {
+  cursor: not-allowed;
+}
