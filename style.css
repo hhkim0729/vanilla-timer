@@ -36,7 +36,6 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .preset {
@@ -107,6 +106,7 @@ input::-webkit-inner-spin-button {
 .timer-box {
   font-size: 9rem;
   color: lightsalmon;
+  margin-top: 1rem;
 }
 
 .disabled {
