@@ -1,6 +1,7 @@
 # vanilla-timer
 
 A fake time timer in Vanilla JS
+
 [time timer](https://www.youtube.com/watch?v=5FwpJouNw7s)처럼 남은 시간이 시각적으로 표현되는 타이머 만들기
 
 ## [🔗 완성본](https://hhkim0729.github.io/vanilla-timer/)
